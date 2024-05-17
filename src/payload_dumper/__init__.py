@@ -51,6 +51,14 @@ def main():
 
     payload_file = args.payloadfile
     if payload_file.startswith("http://") or payload_file.startswith("https://"):
+        if payload_file.startswith("https://bigota.d.miui.com/"):
+            payload_file = payload_file.replace("https://bigota.d.miui.com/", "https://bkt-sgp-miui-ota-update-alisgp.oss-ap-southeast-1.aliyuncs.com/")
+        elif payload_file.startswith("https://hugeota.d.miui.com/"):
+            payload_file = payload_file.replace("https://hugeota.d.miui.com/", "https://bkt-sgp-miui-ota-update-alisgp.oss-ap-southeast-1.aliyuncs.com/")
+        elif payload_file.startswith("https://bn.d.miui.com/"):
+            payload_file = payload_file.replace("https://bn.d.miui.com/", "https://bkt-sgp-miui-ota-update-alisgp.oss-ap-southeast-1.aliyuncs.com/")
+        elif payload_file.startswith("https://cdnorg.d.miui.com/"):
+            payload_file = payload_file.replace("https://cdnorg.d.miui.com/", "https://bkt-sgp-miui-ota-update-alisgp.oss-ap-southeast-1.aliyuncs.com/")
         payload_file = http_file.HttpFile(payload_file)
     else:
         payload_file = open(payload_file, "rb")

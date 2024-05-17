@@ -4,6 +4,7 @@
 
 1. 从包含 payload.bin 的 zip 归档中直接提取分区，而无需解压。  
 2. 从来自网络的包含 payload.bin （的 zip 归档）的 url （如 OTA 更新地址）直接提取分区，而无需下载整个文件。
+3. 支持 MIUI 和 HyperOS OTA 更新包。 (使用 CDN)
 
 借助该脚本，你只需要少量的时间和存储空间就能从 OTA 更新包或地址中提取你想要的分区，尤其是比较小的分区，如 boot, init_boot, vbmeta 等。
 
@@ -12,8 +13,9 @@
 ## 用法
 
 ```bash
-pip install git+https://github.com/5ec1cff/payload-dumper
+pip install git+https://github.com/lokey0905/payload-dumper
 payload_dumper --partitions <partitions you need> <file path or url>
+payload_dumper --list <file path or url>
 ```
 ---
 

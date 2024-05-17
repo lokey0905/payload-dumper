@@ -1,11 +1,12 @@
 # payload dumper of online
 
-[中文](docs/README.zh-CN.md)
+[繁體中文](docs/README.zh-TW.md) | [中文](docs/README.zh-CN.md)
 
 This is a modified version of payload dumper that supports the following features in addition to the original features:
 
 1. Extract partitions directly from a zip archive containing payload.bin without unzipping it.   
 2. Extract partitions directly from a URL (such as an OTA update URL) containing payload.bin from the network without downloading the entire file.  
+3. Support MIUI & HyperOS OTA update package. (Using CDN)
 
 With this script, you only need a small amount of time and storage space to extract the partitions you want from the OTA update package or address, especially the smaller partitions such as boot, init_boot, vbmeta, etc.
 
@@ -16,6 +17,7 @@ Future Outlook: Maybe it can support extracting some files in system partitions?
 ```bash
 pip install git+https://github.com/5ec1cff/payload-dumper
 payload_dumper --partitions <partitions you need> <file path or url>
+payload_dumper --list <file path or url>
 ```
 ---
 
